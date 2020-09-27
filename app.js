@@ -30,7 +30,7 @@ async function init() {
 
 // Questions for Manager & create new Manager
 const promptManager = () => {
-    console.log("Choose Your Team!")
+    console.log("Follow the prompts to complete your team!")
     inquirer
         .prompt([{
                 type: "input",
@@ -173,7 +173,7 @@ const promptIntern = () => {
 //Write HTMl file!
 const assembleTeam = async() => {
     const HTML = render(team);
-    console.log("Your team is complete!")
+    console.log("Your team is complete! Check out the page now.")
     try {
         fs.writeFileSync(outputPath, HTML);
     } catch (error) {
