@@ -1,6 +1,7 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -10,9 +11,151 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const team = [];
+
+
+
+// Questions for Manager & create new Manager
+const promptManager = () => {
+    inquirer
+        .prompt([{
+                type: "input",
+                name: "manager",
+                message: "Team Manager Name: ",
+            },
+            {
+                type: "input",
+                name: "managerId",
+                message: "Manager ID: ",
+            },
+            {
+                type: "input",
+                name: "managerEmail",
+                message: "Manager Email: ",
+            },
+            {
+                type: "input",
+                name: "managerOffice",
+                message: "Manager Office Number: ",
+            },
+        ])
+
+    .then(function(input) {
+        console.log("manager");
+        const manager = new Manager(input.manager, input.managerId, input.managerEmail, input.managerOffice)
+        team.push(manager);
+
+        createTeam();
+    });
+}
+
+// Questions for Engineer & create new Engineer
+const promptEngineer = () => {
+    console.log("Let's build your team.")
+    inquirer
+        .prompt([{
+                type: "input",
+                name: "engineer",
+                message: "Engineer Name: ",
+            },
+            {
+                type: "input",
+                name: "engineerId",
+                message: "Engineer ID: ",
+            },
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "Engineer Email: ",
+            },
+            {
+                type: "input",
+                name: "engineerGithub",
+                message: "Engineer GitHub: ",
+            },
+        ])
+
+    .then(function(input) {
+        console.log("engineer");
+        const engineer = new Engineer(input.engineer, input.engineerId, input.engineerEmail, input.engineerGithub)
+        team.push(engineer);
+
+        createTeam();
+    });
+}
+
+
+// Questions for Intern & create new Intern
+const promptIntern = () => {
+    inquirer
+        .prompt([{
+                type: "input",
+                name: "intert",
+                message: "Intern Name: ",
+            },
+            {
+                type: "input",
+                name: "internId",
+                message: "Intern ID: ",
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "Intern Email: ",
+            },
+            {
+                type: "input",
+                name: "internSchool",
+                message: "Intern School: ",
+            },
+        ])
+
+    .then(function(input) {
+        console.log("intern");
+        const intern = new Intern(input.intern, input.internId, input.internEmail, input.internSchool)
+        team.push(intern);
+
+        createTeam();
+    });
+}
+
+
+//Create a list of Engineers & Interns
+const buildTeam = () => {
+    inquirer.prompt([{
+        type: "list",
+        name: "build",
+        message: "Would you like to add members to your team?",
+        choices: ["Add an Engineer", "Add an Intern", "Complete Team"]
+    }])
+
+    .then(answer => {
+        statment = answer.command;
+
+        switch (statment) {
+            case "Add an Engineer":
+                promptEngineer();
+                break;
+        }
+        switch (statment) {
+            case "Add an Intern":
+                promptIntern();
+                break;
+        }
+        switch (statment) {
+            case "Complete Team":
+                assembleTeam();
+                break;
+        }
+    })
+
+}
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
