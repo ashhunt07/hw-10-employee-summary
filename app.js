@@ -155,7 +155,7 @@ const promptIntern = () => {
 }
 
 
-
+//Write HTMl file!
 const assembleTeam = async() => {
     const HTML = render(team);
     try {
@@ -166,19 +166,6 @@ const assembleTeam = async() => {
 };
 
 
-
-// write file to new team.html file
-// fs.writeFile("output/team.html", buildTeam, function(err) {
-//     if (err) {
-//         return console.log(err);
-//     }
-//     console.log("Success!");
-
-
-// });
-
-
-// console.log(teamHTML);
 
 
 // function call to initialize program
