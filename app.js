@@ -14,7 +14,9 @@ const render = require("./lib/htmlRenderer");
 const team = [];
 
 
-
+async function init() {
+    promptManager();
+}
 // Questions for Manager & create new Manager
 const promptManager = () => {
     inquirer
@@ -45,13 +47,46 @@ const promptManager = () => {
         const manager = new Manager(input.manager, input.managerId, input.managerEmail, input.managerOffice)
         team.push(manager);
 
-        createTeam();
+        buildTeam();
     });
 }
 
+
+//Create a list of Engineers & Interns
+function buildTeam() {
+    inquirer.prompt([{
+        type: "list",
+        name: "build",
+        message: "Would you like to add members to your team?",
+        choices: ["Add an Engineer", "Add an Intern", "Complete Team"]
+    }])
+
+    .then(answer => {
+        switch (answer.build) {
+            case "Add an Engineer":
+                {
+                    promptEngineer();
+                    break;
+                }
+            case "Add an Intern":
+                {
+                    promptIntern();
+                    break;
+                }
+            case "Complete Team":
+                {
+                    assembleTeam();
+                    break;
+                }
+        }
+    });
+
+}
+
+
+
 // Questions for Engineer & create new Engineer
 const promptEngineer = () => {
-    console.log("Let's build your team.")
     inquirer
         .prompt([{
                 type: "input",
@@ -80,7 +115,7 @@ const promptEngineer = () => {
         const engineer = new Engineer(input.engineer, input.engineerId, input.engineerEmail, input.engineerGithub)
         team.push(engineer);
 
-        createTeam();
+        buildTeam();
     });
 }
 
@@ -115,42 +150,39 @@ const promptIntern = () => {
         const intern = new Intern(input.intern, input.internId, input.internEmail, input.internSchool)
         team.push(intern);
 
-        createTeam();
+        buildTeam();
     });
 }
 
 
-//Create a list of Engineers & Interns
-const buildTeam = () => {
-    inquirer.prompt([{
-        type: "list",
-        name: "build",
-        message: "Would you like to add members to your team?",
-        choices: ["Add an Engineer", "Add an Intern", "Complete Team"]
-    }])
 
-    .then(answer => {
-        statment = answer.command;
+const assembleTeam = async() => {
+    const HTML = render(team);
+    try {
+        fs.writeFileSync(outputPath, HTML);
+    } catch (error) {
+        console.log(error.message);
+    }
+};
 
-        switch (statment) {
-            case "Add an Engineer":
-                promptEngineer();
-                break;
-        }
-        switch (statment) {
-            case "Add an Intern":
-                promptIntern();
-                break;
-        }
-        switch (statment) {
-            case "Complete Team":
-                assembleTeam();
-                break;
-        }
-    })
 
-}
 
+// write file to new team.html file
+// fs.writeFile("output/team.html", buildTeam, function(err) {
+//     if (err) {
+//         return console.log(err);
+//     }
+//     console.log("Success!");
+
+
+// });
+
+
+// console.log(teamHTML);
+
+
+// function call to initialize program
+init();
 
 
 // Write code to use inquirer to gather information about the development team members,
