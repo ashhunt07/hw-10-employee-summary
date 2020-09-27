@@ -1,0 +1,108 @@
+body {
+    color: #404E5A;
+}
+
+body a {
+    color: #f8c704;
+    text-decoration: none;
+}
+
+body a:hover {
+    color: #a68208;
+    text-decoration: none;
+}
+
+.team-heading {
+    background-color: #242c4c;
+    color: #fff;
+}
+
+.text-center,
+h1 {
+    font-size: 5em;
+}
+
+.card,
+.employee-card {
+    margin: 1em 0 1em 2%;
+    min-width: 95%;
+    max-width: 95%;
+    border: 0 none;
+    background-color: #f7f7f7;
+}
+
+.card-header {
+    border: 0 none;
+    background-color: #f7f7f7;
+}
+
+.card-header h3 {
+    font-size: 1.25em;
+}
+
+.list-group,
+.list-group-item {
+    border: 0 none;
+    padding: .5em 0;
+    background-color: #f7f7f7;
+}
+
+
+/*Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+    .card,
+    .employee-card {
+        margin: 1em 0 1em 2%;
+        min-width: 98%;
+        max-width: 98%;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .card,
+    .employee-card {
+        margin: 1em 0 2em 0;
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .card,
+    .employee-card {
+        margin: 1em 0 2em .5%;
+        min-width: 45%;
+        max-width: 45%;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .card,
+    .employee-card {
+        margin: 1em 0 2em .5%;
+        min-width: 30%;
+        max-width: 30%;
+    }
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .card,
+    .employee-card {
+        margin: 1em 0 2em .5%;
+        min-width: 22%;
+        max-width: 25%;
+    }
+}
