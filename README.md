@@ -15,19 +15,9 @@ One of the main goals was also to write code that is readable and easily maintai
 
 
 ![Employee Summary Desktop](./assets/desktop_screen-shot.png)
-Desktop
 <br>
 
-![Employee Summary Tablet](./assets/tablet_screen-shot.png) 
-Tablet
-<br>
-
-![Employee Summary Mobile](./assets/mobile_screen-shot.png)
-Mobile
-
-<img src="./assets/tablet_screen-shot.png" alt="tablet view" width="40%"/>
-
-<img src="./assets/mobile_screen-shot.png" alt="mobile view" width="40%"/>
+<img src="./assets/tablet_screen-shot.png" alt="tablet view" width="50%"/> &emsp; <img src="./assets/mobile_screen-shot.png" alt="mobile view" width="50%"/>
 
 
 <br>
