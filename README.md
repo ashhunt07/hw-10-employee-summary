@@ -12,12 +12,13 @@ One of the main goals was also to write code that is readable and easily maintai
 
 >[View the Page](https://ashhunt07.github.io/hw-10-employee-summary/output/team.html)
 
-
+<br>
 
 ![Employee Summary Desktop](./assets/desktop_screen-shot.png)
 <br>
+<br>
 
-<img src="./assets/tablet_screen-shot.png" alt="tablet view" width="50%"/> &emsp; <img src="./assets/mobile_screen-shot.png" alt="mobile view" width="50%"/>
+<img src="./assets/tablet_screen-shot.png" alt="tablet view" width="40%"/> &emsp; <img src="./assets/mobile_screen-shot.png" alt="mobile view" width="40%"/>
 
 
 <br>
