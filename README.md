@@ -14,11 +14,12 @@ One of the main goals was also to write code that is readable and easily maintai
 
 <br>
 
-![Employee Summary Desktop](./assets/desktop_screen-shot.png)
+<img src="./assets/desktop_screen-shots.png" alt="desktop view" width="100%"/>
+
 <br>
 <br>
 
-<img src="./assets/tablet_screen-shot.png" alt="tablet view" width="40%"/> &emsp; <img src="./assets/mobile_screen-shot.png" alt="mobile view" width="40%"/>
+<img src="./assets/tablet_screen-shot.png" alt="tablet view" width="45%"/> &emsp; <img src="./assets/mobile_screen-shot.png" alt="mobile view" width="45%"/>
 
 
 <br>
