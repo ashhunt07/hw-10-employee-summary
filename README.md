@@ -8,7 +8,10 @@ One of the main goals was also to write code that is readable and easily maintai
 
 ## Previews
 
-[Watch The Video](https://drive.google.com/file/d/1BkkBG4wP7MNilpQi8_ILptr6n8qCEa_J/view?usp=sharing)
+>[Watch The Video](https://drive.google.com/file/d/1BkkBG4wP7MNilpQi8_ILptr6n8qCEa_J/view?usp=sharing)
+
+>[View the Page](https://ashhunt07.github.io/hw-10-employee-summary/output/team.html)
+
 
 
 ![Employee Summary Desktop](./assets/desktop_screen-shot.png)
@@ -21,6 +24,10 @@ Tablet
 
 ![Employee Summary Mobile](./assets/mobile_screen-shot.png)
 Mobile
+
+<img src="./assets/tablet_screen-shot.png" alt="tablet view" width="40%"/>
+
+<img src="./assets/mobile_screen-shot.png" alt="mobile view" width="40%"/>
 
 
 <br>
